@@ -1,0 +1,136 @@
+{
+    "info": {
+        "_postman_id": "082d9b2e-6873-45df-85f4-b8bb579a084e",
+        "name": "Laravel",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "11820466"
+    },
+    "item": [
+        {
+            "name": "buyProducts",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"provider_id\": 1,\n    \"storage_id\": 1,\n    \"purchase_date\": \"20024-12-15 19:58:13\",\n    \"total_cost\": 100,\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 1,\n            \"cost_per_unit\": 1\n        }\n    ]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/batches",
+                    "protocol": "http",
+                    "host": ["127", "0", "0", "1"],
+                    "port": "8000",
+                    "path": ["api", "batches"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "calculateProfit",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"provider_id\": 1,\n    \"storage_id\": 1,\n    \"purchase_date\": \"20024-12-15 19:58:13\",\n    \"total_cost\": 100,\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 1,\n            \"cost_per_unit\": 1\n        }\n    ]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/batches/profit",
+                    "protocol": "http",
+                    "host": ["127", "0", "0", "1"],
+                    "port": "8000",
+                    "path": ["api", "batches", "profit"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "availableProducts",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"provider_id\": 1,\n    \"storage_id\": 1,\n    \"purchase_date\": \"20024-12-15 19:58:13\",\n    \"total_cost\": 100,\n    \"products\": [\n        {\n            \"product_id\": 1,\n            \"quantity\": 1,\n            \"cost_per_unit\": 1\n        }\n    ]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/products/available",
+                    "protocol": "http",
+                    "host": ["127", "0", "0", "1"],
+                    "port": "8000",
+                    "path": ["api", "products", "available"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "refundBatch",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"batch_id\": 1,\n    \"products\": [\n        {\n            \"type\": \"batch\",\n            \"product_id\": 1,\n            \"quantity\": 1,\n            \"refund_amount\": 1\n        }\n    ]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/batches/refunds",
+                    "protocol": "http",
+                    "host": ["127", "0", "0", "1"],
+                    "port": "8000",
+                    "path": ["api", "batches", "refunds"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "makeOrder",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"client_id\": 1,\n    \"total_price\": 1000,\n    \"products\": [\n        {\n            \"batch_id\": 1,\n            \"product_id\": 1,\n            \"quantity\": 10000,\n            \"price_per_unit\": 1\n        }\n    ]\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/orders",
+                    "protocol": "http",
+                    "host": ["127", "0", "0", "1"],
+                    "port": "8000",
+                    "path": ["api", "orders"]
+                }
+            },
+            "response": []
+        }
+    ]
+}
